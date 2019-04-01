@@ -1,0 +1,164 @@
+{"frames": [
+
+{
+	"filename": "down0",
+	"frame": {"x":1,"y":709,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+{
+	"filename": "down1",
+	"frame": {"x":1,"y":393,"w":96,"h":104},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":104},
+	"sourceSize": {"w":96,"h":104}
+},
+{
+	"filename": "downIdle0",
+	"frame": {"x":1,"y":1493,"w":96,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":95},
+	"sourceSize": {"w":96,"h":95}
+},
+{
+	"filename": "downIdle1",
+	"frame": {"x":1,"y":1784,"w":96,"h":94},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":94},
+	"sourceSize": {"w":96,"h":94}
+},
+{
+	"filename": "left0",
+	"frame": {"x":1,"y":807,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+{
+	"filename": "left1",
+	"frame": {"x":1,"y":197,"w":103,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":96},
+	"sourceSize": {"w":103,"h":96}
+},
+{
+	"filename": "left2",
+	"frame": {"x":1,"y":1,"w":104,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":96},
+	"sourceSize": {"w":104,"h":96}
+},
+{
+	"filename": "leftIdle0",
+	"frame": {"x":1,"y":905,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+{
+	"filename": "leftIdle1",
+	"frame": {"x":1,"y":1590,"w":96,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":95},
+	"sourceSize": {"w":96,"h":95}
+},
+{
+	"filename": "right0",
+	"frame": {"x":1,"y":1003,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+{
+	"filename": "right1",
+	"frame": {"x":1,"y":295,"w":103,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":96},
+	"sourceSize": {"w":103,"h":96}
+},
+{
+	"filename": "right2",
+	"frame": {"x":1,"y":99,"w":104,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":96},
+	"sourceSize": {"w":104,"h":96}
+},
+{
+	"filename": "rightIdle0",
+	"frame": {"x":1,"y":1101,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+{
+	"filename": "rightIdle1",
+	"frame": {"x":1,"y":1687,"w":96,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":95},
+	"sourceSize": {"w":96,"h":95}
+},
+{
+	"filename": "up0",
+	"frame": {"x":1,"y":1199,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+{
+	"filename": "up1",
+	"frame": {"x":1,"y":499,"w":96,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":103},
+	"sourceSize": {"w":96,"h":103}
+},
+{
+	"filename": "up2",
+	"frame": {"x":1,"y":604,"w":96,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":103},
+	"sourceSize": {"w":96,"h":103}
+},
+{
+	"filename": "upIdle0",
+	"frame": {"x":1,"y":1297,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+{
+	"filename": "upIdle1",
+	"frame": {"x":1,"y":1395,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "mowerGuyU.png",
+	"format": "RGBA8888",
+	"size": {"w":106,"h":1879},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3fc2ffecb43df5771adbd0ed80e49133:1e1f323aef7844bdb1f0fa40a4b9c583:8fae54dbb2b5533555130562986ab566$"
+}
+}

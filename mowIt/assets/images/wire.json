@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "bend",
+	"frame": {"x":1,"y":19,"w":58,"h":58},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":42,"w":58,"h":58},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "straight",
+	"frame": {"x":1,"y":1,"w":100,"h":16},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":42,"w":100,"h":16},
+	"sourceSize": {"w":100,"h":100}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "wire.png",
+	"format": "RGBA8888",
+	"size": {"w":102,"h":78},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b4b8f86d6eae59b8e3fbf264aedfab53:adb13f17a10e00ce268b2401e18325bd:0e43d7fcdae88168541a893e7e6b1f22$"
+}
+}

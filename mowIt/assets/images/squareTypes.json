@@ -1,0 +1,236 @@
+{"frames": [
+
+{
+	"filename": "barrel",
+	"frame": {"x":304,"y":1113,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "bed",
+	"frame": {"x":1,"y":405,"w":100,"h":299},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":299},
+	"sourceSize": {"w":100,"h":299}
+},
+{
+	"filename": "bedU",
+	"frame": {"x":1,"y":706,"w":100,"h":299},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":299},
+	"sourceSize": {"w":100,"h":299}
+},
+{
+	"filename": "bush",
+	"frame": {"x":404,"y":203,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "claudroneU",
+	"frame": {"x":406,"y":305,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "flowers",
+	"frame": {"x":1,"y":1,"w":200,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "garden",
+	"frame": {"x":103,"y":807,"w":200,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":100},
+	"sourceSize": {"w":200,"h":100}
+},
+{
+	"filename": "gardenU",
+	"frame": {"x":103,"y":1113,"w":199,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":199,"h":100},
+	"sourceSize": {"w":199,"h":100}
+},
+{
+	"filename": "gardenVer",
+	"frame": {"x":405,"y":1,"w":100,"h":199},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":199},
+	"sourceSize": {"w":100,"h":199}
+},
+{
+	"filename": "gardenVerU",
+	"frame": {"x":1,"y":1007,"w":100,"h":199},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":199},
+	"sourceSize": {"w":100,"h":199}
+},
+{
+	"filename": "nonmowed1",
+	"frame": {"x":304,"y":404,"w":100,"h":106},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":106},
+	"sourceSize": {"w":100,"h":106}
+},
+{
+	"filename": "nonmowed2",
+	"frame": {"x":304,"y":512,"w":100,"h":106},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":106},
+	"sourceSize": {"w":100,"h":106}
+},
+{
+	"filename": "greenhouse",
+	"frame": {"x":1,"y":203,"w":200,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "greenhouseU",
+	"frame": {"x":203,"y":203,"w":199,"h":199},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":199,"h":199},
+	"sourceSize": {"w":199,"h":199}
+},
+{
+	"filename": "house",
+	"frame": {"x":203,"y":1,"w":200,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "houseU",
+	"frame": {"x":103,"y":405,"w":199,"h":199},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":199,"h":199},
+	"sourceSize": {"w":199,"h":199}
+},
+{
+	"filename": "lavaU",
+	"frame": {"x":103,"y":909,"w":299,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":299,"h":100},
+	"sourceSize": {"w":299,"h":100}
+},
+{
+	"filename": "mowed",
+	"frame": {"x":406,"y":407,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "mowedU",
+	"frame": {"x":406,"y":509,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "mushroomsU",
+	"frame": {"x":103,"y":606,"w":199,"h":199},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":199,"h":199},
+	"sourceSize": {"w":199,"h":199}
+},
+{
+	"filename": "nonmowed1U",
+	"frame": {"x":304,"y":620,"w":100,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":105},
+	"sourceSize": {"w":100,"h":105}
+},
+{
+	"filename": "nonmowed2U",
+	"frame": {"x":305,"y":727,"w":100,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":105},
+	"sourceSize": {"w":100,"h":105}
+},
+{
+	"filename": "pond",
+	"frame": {"x":103,"y":1011,"w":299,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":299,"h":100},
+	"sourceSize": {"w":299,"h":100}
+},
+{
+	"filename": "rock",
+	"frame": {"x":406,"y":611,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "rockU",
+	"frame": {"x":407,"y":713,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "stump",
+	"frame": {"x":407,"y":815,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "tombU",
+	"frame": {"x":404,"y":917,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "treeU",
+	"frame": {"x":406,"y":1019,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "squareTypes.png",
+	"format": "RGBA8888",
+	"size": {"w":508,"h":1214},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:7c87c316c2810f4254f36ec8c0c9e86f:44e6cbede6b403f182d5919ef1e42243:0eced7506eb4673bbae399bad6929cfe$"
+}
+}

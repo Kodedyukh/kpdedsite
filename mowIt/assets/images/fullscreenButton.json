@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "offDown",
+	"frame": {"x":1,"y":1,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "offOut",
+	"frame": {"x":103,"y":1,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "onDown",
+	"frame": {"x":205,"y":1,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "onOut",
+	"frame": {"x":307,"y":1,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "fullscreenButton.png",
+	"format": "RGBA8888",
+	"size": {"w":408,"h":102},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:2aebad8206c8f1e0941355c876765ad6:a31d2403bcc314ede99f234a676384e7:520d6ca173f450153c8a5676c8842129$"
+}
+}

@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":94,"h":92},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":8,"w":94,"h":92},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "left",
+	"frame": {"x":1,"y":95,"w":97,"h":84},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":8,"w":97,"h":84},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "right",
+	"frame": {"x":97,"y":1,"w":97,"h":84},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":8,"w":97,"h":84},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "up",
+	"frame": {"x":100,"y":87,"w":94,"h":92},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":0,"w":94,"h":92},
+	"sourceSize": {"w":100,"h":100}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "plugTile.png",
+	"format": "RGBA8888",
+	"size": {"w":195,"h":180},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:ee774632b22bf2d1ba625f9eac7c1dee:f269fe6bd23d55fecf387ef0bdae41b7:f35ac83fe5f9f85cb3df70fbba679dbe$"
+}
+}

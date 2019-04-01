@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Mow It! – Play it now at Coolmath-games.com</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+	<script src="js/phaser.min.js"></script>
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/LevelChoiceMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<style>
+			.overlay {		
+				background: #185344;						
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)), url(assets/images/gameBack.png);
+				background-repeat: repeat;
+				position:fixed;
+			    width:100%;
+			    height:100%;
+			    top:0px;
+			    left:0px;
+			    z-index:1000;
+			}
+			.divstyle{
+				margin: 0;
+				padding: 0;
+				position: absolute; 
+				top: 50%; 
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%); 
+				transform: translate(-50%, -50%);
+				z-index: 1;
+			}
+			.altDivstyle{
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				z-index: 1;
+			}
+			body{
+				background-color: #333;
+				margin: 0;
+			}
+		</style>
+	</head>	
+
+	<body>
+		<div id="gameContainer" class="altDivstyle"> </div>
+	</body>
+</head>
+<body>
+
+<div id="gameContainer"></div>
+
+<script type="text/javascript">
+
+	
+
+/*var unlockBtn = document.createElement('button');
+
+unlockBtn.textContent = 'unlock levels';
+
+document.body.appendChild(unlockBtn);
+
+unlockBtn.addEventListener('click', function ()
+{
+	unlockAllLevels();
+});*/
+		
+
+var configuration = {
+	'canvasWidthMax' : 2048,
+	'canvasWidth': 800,
+	'canvasHeightMax': 2048,
+	'canvasHeight': 600,
+	'scaleRatio': 1,
+	'originalAspectRatio': 960/640,
+	'addbarHeight': 0,
+};
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    StatusBar.hide();
+}
+
+function updateTimePlayed(game) {
+	game.sessionDuration = game.time.totalElapsedSeconds() - game.lastUpdateCallSeconds;
+	game.lastUpdateCallSeconds = game.time.totalElapsedSeconds();
+	game.timePlayed += game.sessionDuration;
+	localStorage.setItem('timePlayed', game.timePlayed);
+}
+
+var inGame = false;
+
+
+
+window.onload = function() {	
+
+	var allowedDomains = ['coolmath-games.com', 'https://www.coolmath-games.com',
+                'edit.coolmath-games.com', 'stage.coolmath-games.com',
+                'edit-stage.coolmath-games.com', 'dev.coolmath-games.com',
+                'm.coolmath-games.com', 'coolmathgames.com', 'edit.coolmathgames.com', 
+                'stage.coolmathgames.com', 'edit-stage.coolmathgames.com', 
+                'dev.coolmathgames.com', 'm.coolmathgames.com', 'coolmathgames.com',
+                'www.coolmath-games.com', 'www.coolmath-games.com',
+                'www.edit.coolmath-games.com', 'www.stage.coolmath-games.com',
+                'www.edit-stage.coolmath-games.com', 'www.dev.coolmath-games.com',
+                'www.m.coolmath-games.com', 'www.coolmathgames.com', 'www.edit.coolmathgames.com', 
+                'www.stage.coolmathgames.com', 'www.edit-stage.coolmathgames.com', 
+                'www.dev.coolmathgames.com', 'www.m.coolmathgames.com', 'www.coolmathgames.com',
+                'https://www.coolmathgames.com', 'localhost', '192.168.1.67'];
+
+	//console.log(window.location.hostname);
+
+	if (allowedDomains.indexOf(window.location.hostname) >= 0) var game = new Phaser.Game(configuration.canvasWidth, configuration.canvasHeight, Phaser.CANVAS, 'gameContainer');
+	else console.log('not allowed domain '+window.location.hostname);
+
+	window.init = function()
+	{
+	    Security.allowDomain("*");
+	    Security.allowDomain("coolmath-games.com");
+	                            
+	    if (ExternalInterface.available)
+	    {
+	        ExternalInterface.addCallback("unlockAllLevels", unlockAllLevels);                
+	    }
+	};
+
+	window.unlockAllLevels = function()
+	{
+
+	    //game.currentDimensions = game.fieldRanges[0];
+		//game.gameMode = 'split';
+		//game.levelNumber = 23;
+		//localStorage.setItem('mowItCurrentDimensions', game.currentDimensions);
+		localStorage.setItem('mowItGameMode', 'split');
+		localStorage.setItem('mowItLevelNumber', 23);
+
+	    if (game.state.current === 'LevelChoiceMenu') game.state.restart();
+	    //else console.log(game.state.current);
+	    if (game.state.current === 'MainMenu') game.state.restart();
+	    //else console.log(game.state.current);
+	};
+
+	game.sessionDuration = 0;
+	game.lastUpdateCallSeconds = 0;
+	if (isNaN(localStorage.getItem('timePlayed')) || localStorage.getItem('timePlayed')===null)
+	{
+		localStorage.setItem('timePlayed', 0);
+	}
+
+	game.timePlayed = Number(localStorage.getItem('timePlayed'));
+	
+	game.state.add('Boot', BasicGame.Boot);
+	game.state.add('Preloader', BasicGame.Preloader);
+	game.state.add('MainMenu', BasicGame.MainMenu);
+	game.state.add('LevelChoiceMenu', BasicGame.LevelChoiceMenu);
+	game.state.add('Game', BasicGame.Game);
+
+	document.addEventListener("pause", handlePause, false);
+
+	document.addEventListener("resume", handleResume, false);
+
+	function handlePause() {
+		game.paused = true;
+	}
+
+	function handleResume() {
+		game.paused = false;
+	}
+
+	scaleGame = function() {
+	    //console.log('scale game called');
+	    // if called from orientation change event 
+
+	    if (!game.device.desktop)
+	    {
+
+		    game.time.events.add(200, function() {
+		        game.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
+		        game.scale.fullScreenScaleMode = Phaser.ScaleManager.USER_SCALE;    
+		        /*var localWidth = Math.max(window.innerWidth*window.devicePixelRatio, window.innerHeight*window.devicePixelRatio),
+		            localHeight = Math.min(window.innerWidth*window.devicePixelRatio, window.innerHeight*window.devicePixelRatio);*/
+		        game.scale.setGameSize(window.innerWidth*window.devicePixelRatio, window.innerHeight*window.devicePixelRatio);         
+		        game.scale.setUserScale(1/window.devicePixelRatio, 1/window.devicePixelRatio);
+		        game.scale.refresh();
+
+		        game.state.getCurrentState().updateScale();
+		    }, this)
+		} else
+		{
+
+			var scale = Math.min(1, window.innerWidth/configuration.canvasWidth, window.innerHeight/configuration.canvasHeight);
+
+			if (scale < 1)
+			{
+				var gameWidth = scale * configuration.canvasWidth,
+					gameHeight = scale * configuration.canvasHeight;
+
+				game.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
+		        game.scale.fullScreenScaleMode = Phaser.ScaleManager.USER_SCALE;    
+		        /*var localWidth = Math.max(window.innerWidth*window.devicePixelRatio, window.innerHeight*window.devicePixelRatio),
+		            localHeight = Math.min(window.innerWidth*window.devicePixelRatio, window.innerHeight*window.devicePixelRatio);*/
+		        game.scale.setGameSize(gameWidth, gameHeight);
+		        game.scale.refresh();
+
+		        game.state.getCurrentState().updateScale();
+
+			}
+
+		}
+	};
+
+	window.addEventListener('resize', scaleGame);
+	
+	game.state.start('Boot');
+
+	$('html,body').on('click', function() {
+
+	    if (!inGame) {
+	        if (game != undefined) {
+	        	//console.log('sound context resume');
+	            game.sound.context.resume();
+	        }
+	    }
+	});
+
+};
+
+</script>
+
+</body>
+</html>
