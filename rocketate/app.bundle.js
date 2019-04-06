@@ -721,7 +721,7 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
             this.anims.remove('main');
             if (this.game.levelNumber > this.game.lastAvailLevel) {
                 this.game.lastAvailLevel = this.game.levelNumber;
-                localStorage.setItem('rocketateLevelNumber', this.game.lastAvailLevel);
+                localStorage.setItem('levelNumber', this.game.lastAvailLevel);
             }
             wallGenerator.clearTextures();
             this.scene.restart();
@@ -2470,10 +2470,11 @@ var PreloaderScene = exports.PreloaderScene = function (_Phaser$Scene) {
 
             //console.log('respond portrait in preloader');
             this.playPortrait.alpha = 0;
+            this.splashScreen.setPosition(gameWidth*0.5, gameHeight*0.5);
         }
     }, {
         key: 'update',
-        value: function create() {
+        value: function update() {
             this.scene.start('MainMenuScene');
             //this.game.levelNumber = 32;
             //this.scene.start('PlayScene');
@@ -2539,11 +2540,11 @@ var MainMenuScene = exports.MainMenuScene = function (_Phaser$Scene) {
             this.playPortrait.setDepth(200);
             this.playPortrait.alpha = 0;            
 
-            if (isNaN(localStorage.getItem('rocketateLevelNumber')) || localStorage.getItem('rocketateLevelNumber') === null) {
-                this.game.lastAvailLevel = 20;
-                localStorage.setItem('rocketateLevelNumber', this.game.lastAvailLevel);
+            if (isNaN(localStorage.getItem('levelNumber')) || localStorage.getItem('levelNumber') === null) {
+                this.game.lastAvailLevel = 1;
+                localStorage.setItem('levelNumber', this.game.lastAvailLevel);
             } else {
-                this.game.lastAvailLevel = Number(localStorage.getItem('rocketateLevelNumber'));
+                this.game.lastAvailLevel = Number(localStorage.getItem('levelNumber'));
             }
 
             this.buttonSound = this.sound.add('buttonSound');
@@ -4336,7 +4337,9 @@ var config = {
 };
 
 //console.log(window.location.hostname);
+
 var game = new Phaser.Game(config);
+
 
 window.addEventListener('resize', windowResized);
 

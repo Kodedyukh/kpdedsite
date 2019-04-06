@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "fsOffDown",
+	"frame": {"x":0,"y":0,"w":103,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":103},
+	"sourceSize": {"w":103,"h":103}
+},
+{
+	"filename": "fsOffOut",
+	"frame": {"x":0,"y":103,"w":103,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":105},
+	"sourceSize": {"w":103,"h":105}
+},
+{
+	"filename": "fsOnDown",
+	"frame": {"x":0,"y":208,"w":103,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":103},
+	"sourceSize": {"w":103,"h":103}
+},
+{
+	"filename": "fsOnOut",
+	"frame": {"x":0,"y":311,"w":103,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":105},
+	"sourceSize": {"w":103,"h":105}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "fullscreenBut.png",
+	"format": "RGBA8888",
+	"size": {"w":103,"h":416},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:207869ec4933e67b1073c5fb20b9f70d:4f8a7374fb5e54aa02d7e3870b285f42:e779b1554251fcc20455acd66af66469$"
+}
+}

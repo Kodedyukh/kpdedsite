@@ -1,0 +1,60 @@
+{"frames": [
+
+{
+	"filename": "1",
+	"frame": {"x":1,"y":153,"w":35,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":34},
+	"sourceSize": {"w":35,"h":34}
+},
+{
+	"filename": "2",
+	"frame": {"x":1,"y":1,"w":35,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":37},
+	"sourceSize": {"w":35,"h":37}
+},
+{
+	"filename": "3",
+	"frame": {"x":1,"y":189,"w":35,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":32},
+	"sourceSize": {"w":35,"h":33}
+},
+{
+	"filename": "4",
+	"frame": {"x":1,"y":40,"w":35,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":36},
+	"sourceSize": {"w":35,"h":36}
+},
+{
+	"filename": "5",
+	"frame": {"x":1,"y":116,"w":35,"h":35},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":35},
+	"sourceSize": {"w":35,"h":35}
+},
+{
+	"filename": "6",
+	"frame": {"x":1,"y":78,"w":35,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":36},
+	"sourceSize": {"w":35,"h":36}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "electricFollowerFlash.png",
+	"format": "RGBA8888",
+	"size": {"w":37,"h":222},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5ebe25f97d2265f30fcc1321c5cb7b19:69ff2938e652e1234fdb318f44d1af62:aa2c01fd933d23897b9dc6f6378e9bf3$"
+}
+}

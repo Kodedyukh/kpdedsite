@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":0,"y":0,"w":356,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":356,"h":122},
+	"sourceSize": {"w":356,"h":122}
+},
+{
+	"filename": "out",
+	"frame": {"x":0,"y":122,"w":360,"h":139},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":139},
+	"sourceSize": {"w":360,"h":139}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "getMobBut.png",
+	"format": "RGBA8888",
+	"size": {"w":360,"h":261},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e4832841bff6bdf2acbe4f8ad0abbbf4:767611f440e20e77832a00f05618b01b:8a7f32a2db12adccf26240b42c93f36c$"
+}
+}

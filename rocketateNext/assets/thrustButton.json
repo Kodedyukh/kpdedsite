@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":115,"h":73},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":73},
+	"sourceSize": {"w":115,"h":73}
+},
+{
+	"filename": "out",
+	"frame": {"x":118,"y":1,"w":115,"h":73},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":73},
+	"sourceSize": {"w":115,"h":73}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "thrustButton.png",
+	"format": "RGBA8888",
+	"size": {"w":234,"h":75},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8391b587944db62b0464432e63221738:fe2e3e6db08aba4d78d4956e5a5e47b6:1b2fe1be32c3abf79f284987f0b26486$"
+}
+}

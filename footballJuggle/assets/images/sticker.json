@@ -1,0 +1,84 @@
+{"frames": [
+
+{
+	"filename": "aroundTheWorld",
+	"frame": {"x":2,"y":222,"w":235,"h":182},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":235,"h":182},
+	"sourceSize": {"w":235,"h":182}
+},
+{
+	"filename": "beesknees",
+	"frame": {"x":2,"y":2,"w":129,"h":203},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":129,"h":203},
+	"sourceSize": {"w":129,"h":203}
+},
+{
+	"filename": "header",
+	"frame": {"x":542,"y":2,"w":165,"h":212},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":165,"h":212},
+	"sourceSize": {"w":165,"h":212}
+},
+{
+	"filename": "halfmilkshake",
+	"frame": {"x":444,"y":222,"w":223,"h":241},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":223,"h":241},
+	"sourceSize": {"w":223,"h":241}
+},
+{
+	"filename": "milkshake",
+	"frame": {"x":671,"y":222,"w":227,"h":237},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":227,"h":237},
+	"sourceSize": {"w":227,"h":237}
+},
+{
+	"filename": "mamasjuggler",
+	"frame": {"x":711,"y":2,"w":166,"h":216},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":216},
+	"sourceSize": {"w":166,"h":216}
+},
+{
+	"filename": "pancake",
+	"frame": {"x":135,"y":2,"w":223,"h":126},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":223,"h":126},
+	"sourceSize": {"w":223,"h":126}
+},
+{
+	"filename": "shouldermaster",
+	"frame": {"x":241,"y":222,"w":199,"h":219},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":199,"h":219},
+	"sourceSize": {"w":199,"h":219}
+},
+{
+	"filename": "stall",
+	"frame": {"x":362,"y":2,"w":176,"h":196},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":176,"h":196},
+	"sourceSize": {"w":176,"h":196}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "sticker.png",
+	"format": "RGBA8888",
+	"size": {"w":900,"h":465},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:342d7bd08ac3450fc32e95ed94917d59:ac04fa5f91c6ffc32eae0887aa59bf2f:22c48d39c8173f4ece22dbdef93a4c91$"
+}
+}

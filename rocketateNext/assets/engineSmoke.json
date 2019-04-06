@@ -1,0 +1,60 @@
+{"frames": [
+
+{
+	"filename": "1",
+	"frame": {"x":124,"y":100,"w":58,"h":93},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":1,"w":58,"h":93},
+	"sourceSize": {"w":68,"h":104}
+},
+{
+	"filename": "2",
+	"frame": {"x":61,"y":100,"w":61,"h":94},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":1,"w":61,"h":94},
+	"sourceSize": {"w":68,"h":104}
+},
+{
+	"filename": "3",
+	"frame": {"x":1,"y":1,"w":62,"h":94},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":1,"w":62,"h":94},
+	"sourceSize": {"w":68,"h":104}
+},
+{
+	"filename": "4",
+	"frame": {"x":128,"y":1,"w":54,"h":97},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":1,"w":54,"h":97},
+	"sourceSize": {"w":67,"h":104}
+},
+{
+	"filename": "5",
+	"frame": {"x":1,"y":97,"w":58,"h":97},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":1,"w":58,"h":97},
+	"sourceSize": {"w":67,"h":104}
+},
+{
+	"filename": "6",
+	"frame": {"x":65,"y":1,"w":61,"h":97},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":1,"w":61,"h":97},
+	"sourceSize": {"w":67,"h":104}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "engineSmoke.png",
+	"format": "RGBA8888",
+	"size": {"w":183,"h":195},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e612e6f21a11a03a883fb37bce6a87f6:521ea7bcc8c4c5dbf52c78dc3d023e1b:8e20b2d2d42b87dc4a98e4171e59beb8$"
+}
+}

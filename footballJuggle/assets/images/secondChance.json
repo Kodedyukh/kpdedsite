@@ -1,0 +1,36 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":0,"y":0,"w":360,"h":97},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":97},
+	"sourceSize": {"w":360,"h":97}
+},
+{
+	"filename": "inactive",
+	"frame": {"x":0,"y":97,"w":360,"h":97},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":97},
+	"sourceSize": {"w":360,"h":97}
+},
+{
+	"filename": "out",
+	"frame": {"x":0,"y":194,"w":360,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":109},
+	"sourceSize": {"w":360,"h":109}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "secondChance.png",
+	"format": "RGBA8888",
+	"size": {"w":360,"h":303},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:7dc89949adbafca851d973d39960265f:39649709ab71cd058122b426bd1a865e:582b421772159575264fdefe170484e8$"
+}
+}

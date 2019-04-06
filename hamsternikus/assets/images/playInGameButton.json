@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":200,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":103},
+	"sourceSize": {"w":200,"h":103}
+},
+{
+	"filename": "out",
+	"frame": {"x":203,"y":1,"w":200,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":103},
+	"sourceSize": {"w":200,"h":103}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "playInGameButton.png",
+	"format": "RGBA8888",
+	"size": {"w":404,"h":105},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:914e672022576b916d1874b3878bc956:247b5e42d0d9e159589e850a78e660bc:f7cfe0b9fceff69a8be730e917093a7a$"
+}
+}

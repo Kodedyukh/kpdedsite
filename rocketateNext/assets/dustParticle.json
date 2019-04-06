@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "left",
+	"frame": {"x":1,"y":1,"w":20,"h":21},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":21},
+	"sourceSize": {"w":20,"h":21}
+},
+{
+	"filename": "right",
+	"frame": {"x":23,"y":1,"w":20,"h":21},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":21},
+	"sourceSize": {"w":20,"h":21}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "dustParticle.png",
+	"format": "RGBA8888",
+	"size": {"w":44,"h":23},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3bf72117943c1c5ce96e4dea4497b570:8aaa16b9d8751c810f456050056c5a55:e3c9312095cf81a67f0f9f0c6bd46068$"
+}
+}

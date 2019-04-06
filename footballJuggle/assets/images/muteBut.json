@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "muteOnDown",
+	"frame": {"x":0,"y":0,"w":99,"h":99},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":99},
+	"sourceSize": {"w":99,"h":99}
+},
+{
+	"filename": "muteOnOut",
+	"frame": {"x":0,"y":99,"w":99,"h":101},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":101},
+	"sourceSize": {"w":99,"h":101}
+},
+{
+	"filename": "muteOffDown",
+	"frame": {"x":0,"y":200,"w":99,"h":99},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":99},
+	"sourceSize": {"w":99,"h":99}
+},
+{
+	"filename": "muteOffOut",
+	"frame": {"x":0,"y":299,"w":99,"h":101},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":101},
+	"sourceSize": {"w":99,"h":101}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "muteBut.png",
+	"format": "RGBA8888",
+	"size": {"w":99,"h":400},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9ef6f264b079f958f2fc0abbbdcdccc8:70cd0c8cc36b4c380c3464644511a5ba:b0afa67af286772e4cfd17eca89e0ed3$"
+}
+}

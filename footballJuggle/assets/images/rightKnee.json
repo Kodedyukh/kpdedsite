@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "normal",
+	"frame": {"x":85,"y":1,"w":69,"h":93},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":69,"h":93},
+	"sourceSize": {"w":69,"h":93}
+},
+{
+	"filename": "tint",
+	"frame": {"x":1,"y":1,"w":82,"h":107},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":82,"h":107},
+	"sourceSize": {"w":82,"h":107}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "rightKnee.png",
+	"format": "RGBA8888",
+	"size": {"w":155,"h":109},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:bf968c219135249323fad73d30d73348:bd48377215d15c0295e0e79432e313fa:e852291945d237a78729b6402120101d$"
+}
+}

@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":143,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":90},
+	"sourceSize": {"w":143,"h":90}
+},
+{
+	"filename": "out",
+	"frame": {"x":146,"y":1,"w":143,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":90},
+	"sourceSize": {"w":143,"h":90}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "okayButton.png",
+	"format": "RGBA8888",
+	"size": {"w":290,"h":92},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:2d6485adfcaa7d77236948a13c594f52:9a8bc8a1f28f69c30f12b5bfe6f05284:0a115c11c7f8be802960cbd840d37cc8$"
+}
+}

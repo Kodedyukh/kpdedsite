@@ -1,0 +1,16 @@
+{ 
+    
+    "joystick": [
+        
+        {
+            "density": 2, "friction": 0, "bounce": 0.8, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   27, 18  ,  46, 10  ,  68, 5  ,  84, 5  ,  104, 10  ,  77, 37  ,  2, 48  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0.8, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   104, 10  ,  122, 16  ,  138, 33  ,  149, 47  ,  77, 37  ]
+        }
+    ]
+}

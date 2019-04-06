@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "go",
+	"frame": {"x":1,"y":1,"w":40,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40}
+},
+{
+	"filename": "stop",
+	"frame": {"x":43,"y":1,"w":40,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "electricFollower.png",
+	"format": "RGBA8888",
+	"size": {"w":84,"h":42},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:683db78fd08d21f6bba04ab641ed78cd:9b79f1489cf7396aeff0641d38f89377:0356a15b9056c6612d32452ad52e9fe2$"
+}
+}

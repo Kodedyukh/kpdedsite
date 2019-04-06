@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":48,"w":100,"h":43},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":43},
+	"sourceSize": {"w":100,"h":43}
+},
+{
+	"filename": "out",
+	"frame": {"x":1,"y":1,"w":100,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":45},
+	"sourceSize": {"w":100,"h":45}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "leftButton.png",
+	"format": "RGBA8888",
+	"size": {"w":102,"h":92},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:418b4614f4159431cd8576b29c87f73d:08e782c1b8db6c9a557d5595264e45a0:66ca2e2744e5ca2aca39a8f9a093b34d$"
+}
+}

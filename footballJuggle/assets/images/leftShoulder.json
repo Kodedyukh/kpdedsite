@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "normal",
+	"frame": {"x":69,"y":1,"w":53,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":53,"h":95},
+	"sourceSize": {"w":53,"h":95}
+},
+{
+	"filename": "tint",
+	"frame": {"x":1,"y":1,"w":66,"h":107},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":66,"h":107},
+	"sourceSize": {"w":66,"h":107}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "leftShoulder.png",
+	"format": "RGBA8888",
+	"size": {"w":123,"h":109},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:1bec311b2592ebdf3daf99c0df097a54:1e2fc16778d20e635fd0fb47a60f5248:89826241609143c295ce8fc690833975$"
+}
+}

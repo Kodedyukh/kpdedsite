@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":63,"h":63},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":63},
+	"sourceSize": {"w":63,"h":63}
+},
+{
+	"filename": "out",
+	"frame": {"x":66,"y":1,"w":63,"h":63},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":63},
+	"sourceSize": {"w":63,"h":63}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "mazeLevelButton.png",
+	"format": "RGBA8888",
+	"size": {"w":130,"h":65},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8cfa3309aa32917262e8386728a8e95d:55a84dfa923269f78a928d41bf6444d6:565da3fc9ae44d6fbfaa9bdbc990678a$"
+}
+}

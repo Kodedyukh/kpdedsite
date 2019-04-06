@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "muteOffDown",
+	"frame": {"x":1,"y":1,"w":143,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":90},
+	"sourceSize": {"w":143,"h":90}
+},
+{
+	"filename": "muteOffOut",
+	"frame": {"x":146,"y":1,"w":143,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":90},
+	"sourceSize": {"w":143,"h":90}
+},
+{
+	"filename": "muteOnDown",
+	"frame": {"x":291,"y":1,"w":143,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":90},
+	"sourceSize": {"w":143,"h":90}
+},
+{
+	"filename": "muteOnOut",
+	"frame": {"x":436,"y":1,"w":143,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":90},
+	"sourceSize": {"w":143,"h":90}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "mutePauseButton.png",
+	"format": "RGBA8888",
+	"size": {"w":580,"h":92},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:0d0e16a2980e85bf1fc85871f2e012a4:f67e224878d00643a655e212a691b7e3:d6ff0a35385c985fc03c444a36fd97d5$"
+}
+}

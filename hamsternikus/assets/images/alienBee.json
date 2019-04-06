@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "1",
+	"frame": {"x":27,"y":1,"w":22,"h":26},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":26},
+	"sourceSize": {"w":22,"h":26}
+},
+{
+	"filename": "2",
+	"frame": {"x":1,"y":1,"w":24,"h":26},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":26},
+	"sourceSize": {"w":24,"h":26}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "alienBee.png",
+	"format": "RGBA8888",
+	"size": {"w":50,"h":28},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:cecaf1afe04fc4a4f495970abc351d08:c025238b403eb684d31c845ffc583d55:86ad5e0530992a6570ed0bd27b932bd5$"
+}
+}

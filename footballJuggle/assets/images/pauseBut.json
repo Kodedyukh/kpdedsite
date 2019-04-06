@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "offDown",
+	"frame": {"x":0,"y":0,"w":103,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":103},
+	"sourceSize": {"w":103,"h":103}
+},
+{
+	"filename": "offOut",
+	"frame": {"x":0,"y":103,"w":103,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":105},
+	"sourceSize": {"w":103,"h":105}
+},
+{
+	"filename": "onDown",
+	"frame": {"x":0,"y":208,"w":103,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":103},
+	"sourceSize": {"w":103,"h":103}
+},
+{
+	"filename": "onOut",
+	"frame": {"x":0,"y":311,"w":103,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":105},
+	"sourceSize": {"w":103,"h":105}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pauseBut.png",
+	"format": "RGBA8888",
+	"size": {"w":103,"h":416},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b337a425ddeefa730cdd8c67335aa7a7:ab54c894f5826b02403cfc1b9a56055b:e7f2bf76bb065b9f6ed0e973b6e33ea0$"
+}
+}

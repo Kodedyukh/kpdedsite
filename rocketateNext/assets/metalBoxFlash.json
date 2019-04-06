@@ -1,0 +1,60 @@
+{"frames": [
+
+{
+	"filename": "1",
+	"frame": {"x":1,"y":285,"w":90,"h":40},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":22,"w":90,"h":40},
+	"sourceSize": {"w":90,"h":77}
+},
+{
+	"filename": "2",
+	"frame": {"x":1,"y":76,"w":90,"h":63},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":6,"w":90,"h":63},
+	"sourceSize": {"w":90,"h":77}
+},
+{
+	"filename": "3",
+	"frame": {"x":1,"y":238,"w":90,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":18,"w":90,"h":45},
+	"sourceSize": {"w":90,"h":77}
+},
+{
+	"filename": "4",
+	"frame": {"x":1,"y":141,"w":90,"h":47},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":11,"w":90,"h":47},
+	"sourceSize": {"w":90,"h":76}
+},
+{
+	"filename": "5",
+	"frame": {"x":1,"y":190,"w":90,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":12,"w":90,"h":46},
+	"sourceSize": {"w":90,"h":77}
+},
+{
+	"filename": "6",
+	"frame": {"x":1,"y":1,"w":90,"h":73},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":7,"w":90,"h":73},
+	"sourceSize": {"w":90,"h":87}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "metalBoxFlash.png",
+	"format": "RGBA8888",
+	"size": {"w":92,"h":326},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5148a70df7b2e8cf0b584f10791c4a35:4520bd0518fda4937143d88fa7110e06:97b561715b58801fa01318a5dd275820$"
+}
+}

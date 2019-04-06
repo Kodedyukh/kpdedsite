@@ -2,15 +2,9 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Mow It! – Play it now at Coolmath-games.com</title>
+	<title>Mow It!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-	<script src="js/phaser.min.js"></script>
-	<script src="js/Boot.js"></script>
-	<script src="js/Preloader.js"></script>
-	<script src="js/MainMenu.js"></script>
-	<script src="js/LevelChoiceMenu.js"></script>
-	<script src="js/Game.js"></script>
-	<script src="js/jquery.min.js"></script>
+	<script src="js/mowit.min.js"></script>
 	<style>
 			.overlay {		
 				background: #185344;						
@@ -95,55 +89,9 @@ function updateTimePlayed(game) {
 
 var inGame = false;
 
+window.onload = function() {		
 
-
-window.onload = function() {	
-
-	var allowedDomains = ['coolmath-games.com', 'https://www.coolmath-games.com',
-                'edit.coolmath-games.com', 'stage.coolmath-games.com',
-                'edit-stage.coolmath-games.com', 'dev.coolmath-games.com',
-                'm.coolmath-games.com', 'coolmathgames.com', 'edit.coolmathgames.com', 
-                'stage.coolmathgames.com', 'edit-stage.coolmathgames.com', 
-                'dev.coolmathgames.com', 'm.coolmathgames.com', 'coolmathgames.com',
-                'www.coolmath-games.com', 'www.coolmath-games.com',
-                'www.edit.coolmath-games.com', 'www.stage.coolmath-games.com',
-                'www.edit-stage.coolmath-games.com', 'www.dev.coolmath-games.com',
-                'www.m.coolmath-games.com', 'www.coolmathgames.com', 'www.edit.coolmathgames.com', 
-                'www.stage.coolmathgames.com', 'www.edit-stage.coolmathgames.com', 
-                'www.dev.coolmathgames.com', 'www.m.coolmathgames.com', 'www.coolmathgames.com',
-                'https://www.coolmathgames.com', 'localhost', '192.168.1.67', 'kodedyukh.github.io'];
-
-	//console.log(window.location.hostname);
-
-	if (allowedDomains.indexOf(window.location.hostname) >= 0) var game = new Phaser.Game(configuration.canvasWidth, configuration.canvasHeight, Phaser.CANVAS, 'gameContainer');
-	else console.log('not allowed domain '+window.location.hostname);
-
-	window.init = function()
-	{
-	    Security.allowDomain("*");
-	    Security.allowDomain("coolmath-games.com");
-	                            
-	    if (ExternalInterface.available)
-	    {
-	        ExternalInterface.addCallback("unlockAllLevels", unlockAllLevels);                
-	    }
-	};
-
-	window.unlockAllLevels = function()
-	{
-
-	    //game.currentDimensions = game.fieldRanges[0];
-		//game.gameMode = 'split';
-		//game.levelNumber = 23;
-		//localStorage.setItem('mowItCurrentDimensions', game.currentDimensions);
-		localStorage.setItem('mowItGameMode', 'split');
-		localStorage.setItem('mowItLevelNumber', 23);
-
-	    if (game.state.current === 'LevelChoiceMenu') game.state.restart();
-	    //else console.log(game.state.current);
-	    if (game.state.current === 'MainMenu') game.state.restart();
-	    //else console.log(game.state.current);
-	};
+	var game = new Phaser.Game(configuration.canvasWidth, configuration.canvasHeight, Phaser.CANVAS, 'gameContainer');
 
 	game.sessionDuration = 0;
 	game.lastUpdateCallSeconds = 0;
@@ -214,7 +162,7 @@ window.onload = function() {
 		}
 	};
 
-	window.addEventListener('resize', scaleGame);
+	window.addEventListener('resize', scaleGame);	
 	
 	game.state.start('Boot');
 

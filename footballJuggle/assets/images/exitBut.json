@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":0,"y":0,"w":360,"h":97},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":97},
+	"sourceSize": {"w":360,"h":97}
+},
+{
+	"filename": "out",
+	"frame": {"x":0,"y":97,"w":360,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":110},
+	"sourceSize": {"w":360,"h":110}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "exitBut.png",
+	"format": "RGBA8888",
+	"size": {"w":360,"h":207},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:182c34351ab95577d527262ef815c6a5:23722d95c25119eb5f5c3880c587a438:06a21f23cf764c6292e38dedd74e9649$"
+}
+}

@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "out",
+	"frame": {"x":1,"y":1,"w":48,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+	"sourceSize": {"w":48,"h":48}
+},
+{
+	"filename": "down",
+	"frame": {"x":51,"y":1,"w":48,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+	"sourceSize": {"w":48,"h":48}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "fanTrigger.png",
+	"format": "RGBA8888",
+	"size": {"w":100,"h":50},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e5d78416f4125862244147a009fe728b:5749e0952c5e178a9987b9ef2d9cebb7:a9e571f1618fabf7be26dea11ff22d72$"
+}
+}

@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":91,"h":91},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":91},
+	"sourceSize": {"w":91,"h":91}
+},
+{
+	"filename": "out",
+	"frame": {"x":94,"y":1,"w":91,"h":91},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":91},
+	"sourceSize": {"w":91,"h":91}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pauseButton.png",
+	"format": "RGBA8888",
+	"size": {"w":186,"h":93},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:ea51401f04660069e6e4c77a0414851d:6b4a57908931afe8e5b1d2678e917bef:fb0f6542fe3e13150b13878dbc7bb4f7$"
+}
+}

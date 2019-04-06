@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="height=device-height, initial-scale=1">
+		<title>Football juggle</title>
+
+		<!-- Load JavaScript -->
+		<script type="text/javascript" src="js/phaser.min.js"></script>
+		<script type="text/javascript" src="js/support.js"></script>
+		<script type="text/javascript" src="js/swipe.js"></script>
+		<script type="text/javascript" src="js/boot.js"></script>
+		<script type="text/javascript" src="js/load.js"></script>
+		<script type="text/javascript" src="js/mainMenu.js"></script>
+		<script type="text/javascript" src="js/playState.js"></script>
+		<script type="text/javascript" src="js/tricksMenu.js"></script>
+		<script type="text/javascript" src="js/demoState.js"></script>
+		<script type="text/javascript" src="js/game.js"></script>
+		<style>
+			.overlay {
+				background-image: url(assets/pageBack.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;	
+				position:fixed;
+			    width:100%;
+			    height:100%;
+			    top:0px;
+			    left:0px;
+			    z-index:1000;
+			}
+			.divstyle{
+					display: table;
+					margin: 0 auto;
+				}			
+		</style>
+	</head>	
+	<body>
+		<div id="wrapper" class="overlay">
+			<div id="gameDiv" class="divstyle"> </div>
+		</div>
+	</body>
+</html>

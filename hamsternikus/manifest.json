@@ -1,0 +1,8 @@
+{
+  "name": "Hamsternikus",
+  "description": "Sokoban-like puzzle HTML5 game, developed with Phaser",
+  "icons": [{
+    "src": "assets/icon.png",
+    "sizes": "192x192"
+  }]
+}

@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":80,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
+	"sourceSize": {"w":80,"h":80}
+},
+{
+	"filename": "out",
+	"frame": {"x":83,"y":1,"w":80,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
+	"sourceSize": {"w":80,"h":80}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "reverseTrigger.png",
+	"format": "RGBA8888",
+	"size": {"w":164,"h":82},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:6bfa8e88bf53bcabf6dadd65c031317d:e25800811b0a2be84f0e5e43d5bdc51a:12a0d1f563f635d53bf7ca4aa0c22d1e$"
+}
+}

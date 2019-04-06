@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Hamsternikus</title>
+	<meta name="viewport" content="height=device-height, initial-scale=1">
+	<link rel="manifest" href="/manifest.json">
+	<script src="js/phaser.min.js"></script>
+	<script src="js/paper-full.js"></script>
+	<script src="js/rhill-voronoi-core.js"></script>
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/LevelChoiceMenu.js"></script>
+	<script src="js/StoryScenes.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/support.js"></script>
+	<script src="js/graphicsSupport.js"></script>
+	<script src="js/delaunator.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<style>
+			.overlay {		
+				background: #acbbbe;						
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)), url(assets/pageBack.png);
+				background-repeat: repeat;
+				position:fixed;
+			    width:100%;
+			    height:100%;
+			    top:0px;
+			    left:0px;
+			}
+			.divstyle{
+				position: absolute; 
+				top: 50%; 
+				left: 50%; 
+				-webkit-transform: translate(-50%, -50%); 
+				transform: translate(-50%, -50%);
+			}			
+		</style>
+	</head>	
+
+	<body>
+		<div id="wrapper" class="overlay">
+			<div id="gameContainer" class="divstyle"> </div>
+		</div>
+	</body>
+
+<script type="text/javascript">
+
+var configuration = {
+	'canvasWidthMax' : 2048,
+	'canvasWidth': 960,
+	'canvasHeightMax': 2048,
+	'canvasHeight': 640,
+	'scaleRatio': 1,
+	'originalAspectRatio': 960/640,
+	'addbarHeight': 0,
+};
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    StatusBar.hide();
+    /*AdMob.isInterstitialReady(function(isready){
+	    if(isready) BasicGame.Game.adReady = true;
+	});*/
+}
+
+function updateTimePlayed(game) {
+	game.sessionDuration = game.time.totalElapsedSeconds() - game.lastUpdateCallSeconds;
+	game.lastUpdateCallSeconds = game.time.totalElapsedSeconds();
+	//console.log(game.sessionDuration);
+	//console.log(game.timePlayed);
+	game.timePlayed += game.sessionDuration;
+	localStorage.setItem('timePlayed', game.timePlayed);
+}
+
+var inGame = false;
+
+determineGameDimensions = function(width, height) {
+	var orientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
+	if (!orientation) {
+		orientation = {'type': ''};
+		switch (window.orientation) {
+			case 90:
+				orientation.type = 'landscape-primary';
+				break;
+			case 180:
+				orientation.type = 'portrait-secondary';
+				break;
+			case 0:
+				orientation.type = 'portrait-primary';
+				break;
+			case -90:
+				orientation.type = 'landscape-secondary';
+				break;
+		}
+	}
+	var gameWidth = configuration.canvasWidth;
+	var gameHeight = configuration.canvasHeight;
+	var currentAR = width/height;
+	//if (window.devicePixelRatio === 1) {
+		/*if (currentAR>=configuration.originalAspectRatio) {
+			gameWidth = height * configuration.originalAspectRatio;
+			gameHeight = height;
+			configuration.scaleRatio = height/configuration.canvasHeight;
+		} else {
+			gameWidth = width;
+			gameHeight = width / configuration.originalAspectRatio;
+			configuration.scaleRatio = width/configuration.canvasWidth;
+		}
+	/*} else {
+		if (orientation.type === 'portrait-primary' || orientation.type === 'portrait-secondary') {
+			gameWidth = width;
+			gameHeight = height;
+		} else {
+			gameWidth = height*configuration.originalAspectRatio;
+			gameHeight = height;
+		}
+		
+					display: table;
+					margin: 0 auto;
+	}*/
+
+	if (window.devicePixelRatio === 1) {
+		if (height>configuration.canvasHeight && width>configuration.canvasWidth) {
+			gameWidth = configuration.canvasWidth;
+			gameHeight = configuration.canvasHeight;
+		} else {
+			gameWidth = height * configuration.originalAspectRatio;
+			gameHeight = height;
+			configuration.scaleRatio = 1;//height/configuration.canvasHeight;
+		}
+	} else {
+		if (orientation.type === 'portrait-primary' || orientation.type === 'portrait-secondary') {
+			gameWidth = width;
+			gameHeight = width / configuration.originalAspectRatio;
+			configuration.scaleRatio = 1;//width/configuration.canvasWidth;
+		} else {
+			gameWidth = height*configuration.originalAspectRatio;
+			gameHeight = height;
+			configuration.scaleRatio = 1;//height/configuration.canvasHeight;
+		}
+	}
+	return [gameWidth, gameHeight];
+};
+
+window.onload = function() {	
+	// set GD stuff
+	
+
+	var game = new Phaser.Game(960, 640, Phaser.CANVAS, 'gameContainer');
+
+	// set timer to measure timeplayed
+
+	game.sessionDuration = 0;
+	game.lastUpdateCallSeconds = 0;
+	if (isNaN(localStorage.getItem('timePlayed')) || localStorage.getItem('timePlayed')===null)
+	{
+		localStorage.setItem('timePlayed', 0);
+	}
+
+	game.timePlayed = Number(localStorage.getItem('timePlayed'));
+
+	game.state.add('Boot', BasicGame.Boot);
+	game.state.add('Preloader', BasicGame.Preloader);
+	game.state.add('MainMenu', BasicGame.MainMenu);
+	game.state.add('LevelChoiceMenu', BasicGame.LevelChoiceMenu);
+	game.state.add('StoryScenes', BasicGame.StoryScenes);
+	game.state.add('Game', BasicGame.Game);
+
+	document.addEventListener("pause", handlePause, false);
+
+	document.addEventListener("resume", handleResume, false);
+
+	function handlePause() {
+		updateTimePlayed(game);
+		game.paused = true;
+	}
+
+	function handleResume() {
+		game.paused = false;
+	}
+
+	//	Now start the Boot state.
+	game.state.start('Boot');
+
+	$('html,body').on('click', function() {
+
+	    if (!inGame) {
+	        if (game != undefined) {
+	            game.sound.context.resume();
+	        }
+	    }
+	});
+};
+
+</script>
+
+</body>
+</html>
