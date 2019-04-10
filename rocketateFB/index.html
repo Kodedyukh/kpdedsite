@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Rocketate</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+		<style>
+			.divstyle{
+				margin: 0;
+				padding: 0;
+				position: absolute; 
+				top: 50%; 
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%); 
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				display: block;
+			}	
+			body{
+				background-color: #333;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}		
+			html{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.fbAsyncInit = function() {
+				
+			    FB.init({
+			      appId      : '383559942498828',
+			      xfbml      : true,
+			      version    : 'v3.2'
+			    });
+
+			    // ADD ADDITIONAL FACEBOOK CODE HERE
+			};
+
+			(function(d, s, id){
+			    var js, fjs = d.getElementsByTagName(s)[0];
+			    if (d.getElementById(id)) {return;}
+			    js = d.createElement(s); js.id = id;
+			    js.src = "https://connect.facebook.net/en_US/sdk.js";
+			    fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+		</script>
+		<div id="gameContainer" class="divstyle"> </div>
+		<script src="rocketate.min.js"></script>
+	</body>
+</html>
