@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Rocketate</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+		<style>
+			.divstyle{
+				margin: 0;
+				padding: 0;
+				position: absolute; 
+				top: 50%; 
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%); 
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				display: block;
+			}	
+			body{
+				background-color: #333;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}		
+			html{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>		
+		<!-- GameAnalytics -->
+		<script>
+		(function(w,d,a,m){var s='script';var g='GameAnalytics';w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)},a=d.createElement(s),m=d.getElementsByTagName(s)[0];a.async=1;a.src='http://download.gameanalytics.com/js/GameAnalytics-3.1.2.min.js';m.parentNode.insertBefore(a,m)})(window,document);
+		
+		GameAnalytics("initialize", "d050f2879ceaf8f97010d46655ecfad0", "77440f56f67fc325683eeb33a9f644f13214bec4");
+		</script>
+		<!-- End GameAnalytics -->
+		<div id="gameContainer" class="divstyle"> </div>
+		<script src="production-dependencies.bundle.js"></script>
+		<script src="app.bundle.js"></script>
+	</body>
+</html>

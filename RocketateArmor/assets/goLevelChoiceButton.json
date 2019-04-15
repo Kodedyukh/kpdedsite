@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":143,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":90},
+	"sourceSize": {"w":143,"h":90}
+},
+{
+	"filename": "out",
+	"frame": {"x":146,"y":1,"w":143,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":90},
+	"sourceSize": {"w":143,"h":90}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "goLevelChoiceButton.png",
+	"format": "RGBA8888",
+	"size": {"w":290,"h":92},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:1423490857c1111d042fd417d8f82fd0:b12a39670d27c13d5b8f6f848bc8d77e:85b26539f6861bda174216f8cec4a1ad$"
+}
+}
