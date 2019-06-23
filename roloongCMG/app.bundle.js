@@ -33,6 +33,7 @@ var BootScene = exports.BootScene = function (_Phaser$Scene) {
 
             this.load.image('preloaderBack', 'assets/preloaderBack.png');
             this.load.image('preloaderBar', 'assets/preloaderBar.png');
+            this.load.image('coolMathSplash', 'assets/CoolMathSplash.png');
         }
     }, {
         key: 'create',
@@ -86,16 +87,32 @@ var PreloaderScene = exports.PreloaderScene = function (_Phaser$Scene) {
         key: 'preload',
         value: function preload() {
             var gameWidth = this.game.scale.width,
-                gameHeight = this.game.scale.height;
+                gameHeight = this.game.scale.height,
+                UIScale = Math.min(this.game.scale.width, this.game.scale.height) / 600;
 
             this.preloaderBack = this.add.image(gameWidth / 2 - 151, gameHeight * 0.8, 'preloaderBack').setOrigin(0, 0.5);
 
             this.preloaderBar = this.add.image(gameWidth / 2 - 150, gameHeight * 0.8, 'preloaderBar').setOrigin(0, 0.5);
             this.preloaderBar.setCrop(0, 0, 0, 29);
 
+            this.preloaderBack.alpha = 0;
+            this.preloaderBar.alpha = 0;
+
             this.load.on('progress', function (value) {
                 this.preloaderBar.setCrop(0, 0, 300 * value, 29);
             }, this);
+
+            this.splashScreen = this.add.image(gameWidth * 0.5, gameHeight * 0.5, 'coolMathSplash');
+            this.splashScreen.setScale(UIScale);
+
+            this.cameras.main.setBackgroundColor('#000000');
+
+            this.time.delayedCall(1500, function () {
+                this.splashScreen.alpha = 0;
+                this.cameras.main.setBackgroundColor('#1b2337');
+                this.preloaderBack.alpha = 1;
+                this.preloaderBar.alpha = 1;
+            }, [], this);
 
             this.load.atlas('startButton', 'assets/startButton.png', 'assets/startButton.json');
             this.load.atlas('okayButton', 'assets/okayButton.png', 'assets/okayButton.json');
@@ -159,15 +176,21 @@ var PreloaderScene = exports.PreloaderScene = function (_Phaser$Scene) {
             //console.log('scale and position in preload scene');
 
             var gameWidth = this.game.scale.width,
-                gameHeight = this.game.scale.height;
+                gameHeight = this.game.scale.height,
+                UIScale = Math.min(this.game.scale.width, this.game.scale.height) / 600;
 
             this.preloaderBar.setPosition(gameWidth / 2 - 150, gameHeight * 0.8);
             this.preloaderBack.setPosition(gameWidth / 2 - 151, gameHeight * 0.8);
+            this.splashScreen.setPosition(gameWidth * 0.5, gameHeight * 0.5);
+            this.splashScreen.setScale(UIScale);
         }
     }, {
         key: 'create',
-        value: function create() {
-            this.scene.start('MainMenuScene');
+        value: function create() {}
+    }, {
+        key: 'update',
+        value: function update() {
+            if (this.splashScreen.alpha === 0) this.scene.start('MainMenuScene');
         }
     }]);
 
