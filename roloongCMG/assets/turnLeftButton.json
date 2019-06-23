@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":120,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":109},
+	"sourceSize": {"w":120,"h":109}
+},
+{
+	"filename": "out",
+	"frame": {"x":123,"y":1,"w":120,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":109},
+	"sourceSize": {"w":120,"h":109}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "turnLeftButton.png",
+	"format": "RGBA8888",
+	"size": {"w":244,"h":111},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:872bbcd59b2aab6455172ee44bd40884:073e35da768f7b01f32b1696bf3c62cf:7cad5ef85b0b6b50b5dde5c38fa6d478$"
+}
+}
