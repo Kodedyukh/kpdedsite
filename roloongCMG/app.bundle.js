@@ -1,10 +1,7 @@
 webpackJsonp([0],{
 
-/***/ 1409:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ 1420:
+/***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -56,11 +53,8 @@ var BootScene = exports.BootScene = function (_Phaser$Scene) {
 
 /***/ }),
 
-/***/ 1410:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ 1421:
+/***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -200,11 +194,8 @@ var PreloaderScene = exports.PreloaderScene = function (_Phaser$Scene) {
 
 /***/ }),
 
-/***/ 1411:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ 1422:
+/***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -427,11 +418,8 @@ var MainMenuScene = exports.MainMenuScene = function (_Phaser$Scene) {
 
 /***/ }),
 
-/***/ 1412:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ 1423:
+/***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -618,11 +606,8 @@ var LevelChoiceScene = exports.LevelChoiceScene = function (_Phaser$Scene) {
 
 /***/ }),
 
-/***/ 1413:
+/***/ 1424:
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -636,12 +621,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var PlainCollider = __webpack_require__(248);
+var PlainCollider = __webpack_require__(252);
 var RoloongTypeDict = __webpack_require__(79);
-var Worm = __webpack_require__(1416);
-var ColoredBlock = __webpack_require__(1418);
-var GreyBlock = __webpack_require__(1419);
-var Wall = __webpack_require__(1420);
+var Worm = __webpack_require__(1427);
+var ColoredBlock = __webpack_require__(1429);
+var GreyBlock = __webpack_require__(1430);
+var Wall = __webpack_require__(1431);
 
 var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
     _inherits(PlayScene, _Phaser$Scene);
@@ -1775,11 +1760,8 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
 
 /***/ }),
 
-/***/ 1414:
+/***/ 1425:
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1789,7 +1771,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var SAT = __webpack_require__(1415);
+var SAT = __webpack_require__(1426);
 
 var Pair = exports.Pair = function () {
 	function Pair(object1, object2, plainCollider) {
@@ -1989,11 +1971,8 @@ module.exports = Pair;
 
 /***/ }),
 
-/***/ 1415:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ 1426:
+/***/ (function(module, exports) {
 
 var SAT = {
 	findIntersection: function findIntersection(collider1, collider2, report) {
@@ -2192,11 +2171,8 @@ module.exports = SAT;
 
 /***/ }),
 
-/***/ 1416:
+/***/ 1427:
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -2207,8 +2183,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var RoloongTypeDict = __webpack_require__(79);
-var WormBlock = __webpack_require__(1417);
-var PlainCollider = __webpack_require__(248);
+var WormBlock = __webpack_require__(1428);
+var PlainCollider = __webpack_require__(252);
 
 var Worm = function (_Phaser$GameObjects$G) {
     _inherits(Worm, _Phaser$GameObjects$G);
@@ -2594,11 +2570,8 @@ module.exports = Worm;
 
 /***/ }),
 
-/***/ 1417:
+/***/ 1428:
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -2609,7 +2582,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var RoloongTypeDict = __webpack_require__(79);
-var Block = __webpack_require__(249);
+var Block = __webpack_require__(253);
 
 var WormBlock = function (_Block) {
 	_inherits(WormBlock, _Block);
@@ -2672,11 +2645,8 @@ module.exports = WormBlock;
 
 /***/ }),
 
-/***/ 1418:
+/***/ 1429:
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -2689,7 +2659,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var RoloongTypeDict = __webpack_require__(79);
-var Block = __webpack_require__(249);
+var Block = __webpack_require__(253);
 
 var ColoredBlock = function (_Block) {
     _inherits(ColoredBlock, _Block);
@@ -2837,11 +2807,8 @@ module.exports = ColoredBlock;
 
 /***/ }),
 
-/***/ 1419:
+/***/ 1430:
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -2852,7 +2819,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var RoloongTypeDict = __webpack_require__(79);
-var Block = __webpack_require__(249);
+var Block = __webpack_require__(253);
 
 var GreyBlock = function (_Block) {
     _inherits(GreyBlock, _Block);
@@ -2887,11 +2854,8 @@ module.exports = GreyBlock;
 
 /***/ }),
 
-/***/ 1420:
+/***/ 1431:
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -2994,13 +2958,10 @@ module.exports = Wall;
 
 /***/ }),
 
-/***/ 248:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-var Pair = __webpack_require__(1414);
+var Pair = __webpack_require__(1425);
 
 var PlainCollider = {
 
@@ -3349,11 +3310,8 @@ module.exports = PlainCollider;
 
 /***/ }),
 
-/***/ 249:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -3364,7 +3322,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var RoloongTypeDict = __webpack_require__(79);
-var PlainCollider = __webpack_require__(248);
+var PlainCollider = __webpack_require__(252);
 
 var Block = function (_Phaser$GameObjects$S) {
     _inherits(Block, _Phaser$GameObjects$S);
@@ -3567,23 +3525,20 @@ module.exports = Block;
 
 /***/ }),
 
-/***/ 519:
+/***/ 530:
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+__webpack_require__(254);
 
+var _BootScene = __webpack_require__(1420);
 
-__webpack_require__(250);
+var _PreloaderScene = __webpack_require__(1421);
 
-var _BootScene = __webpack_require__(1409);
+var _MainMenuScene = __webpack_require__(1422);
 
-var _PreloaderScene = __webpack_require__(1410);
+var _LevelChoiceScene = __webpack_require__(1423);
 
-var _MainMenuScene = __webpack_require__(1411);
-
-var _LevelChoiceScene = __webpack_require__(1412);
-
-var _PlayScene = __webpack_require__(1413);
+var _PlayScene = __webpack_require__(1424);
 
 function detectMob() {
     if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
@@ -3768,10 +3723,7 @@ window.windowResized = windowResized;
 /***/ }),
 
 /***/ 79:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ (function(module, exports) {
 
 var RoloongTypeDict = Object.freeze({
 	wall: 1,
@@ -3786,4 +3738,4 @@ module.exports = RoloongTypeDict;
 
 /***/ })
 
-},[519]);
+},[530]);
