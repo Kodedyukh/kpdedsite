@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "out",
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":4,"w":32,"h":32},
+	"sourceSize": {"w":40,"h":40}
+},
+{
+	"filename": "in",
+	"frame": {"x":1,"y":35,"w":30,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":5,"w":30,"h":26},
+	"sourceSize": {"w":40,"h":40}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "phantomBlock.png",
+	"format": "RGBA8888",
+	"size": {"w":34,"h":62},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8d8404d3793160bde28f13d5002ac2f5:78b8cb225363a95134eac34d1294fe95:6a27e868eb9661858f70614580d241dd$"
+}
+}
