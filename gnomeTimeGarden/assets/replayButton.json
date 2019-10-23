@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":95,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":95},
+	"sourceSize": {"w":95,"h":95}
+},
+{
+	"filename": "out",
+	"frame": {"x":98,"y":1,"w":95,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":95},
+	"sourceSize": {"w":95,"h":95}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "replayButton.png",
+	"format": "RGBA8888",
+	"size": {"w":194,"h":97},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:fee146259128b5671b2d1b2a22a0aa86:36c47049220c6c05548b985573d74d9b:89e73fbd310d6972bb4dc316f0d5b44e$"
+}
+}

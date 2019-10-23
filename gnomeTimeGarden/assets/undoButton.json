@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":95,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":95},
+	"sourceSize": {"w":95,"h":95}
+},
+{
+	"filename": "out",
+	"frame": {"x":98,"y":1,"w":95,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":95},
+	"sourceSize": {"w":95,"h":95}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "undoButton.png",
+	"format": "RGBA8888",
+	"size": {"w":194,"h":97},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b8f155683fe0fe456c60dfa39c16fe56:015b9e1fc577584e3eede1284c87a5f1:7a5537dfb3420964857e131dd4c49dab$"
+}
+}

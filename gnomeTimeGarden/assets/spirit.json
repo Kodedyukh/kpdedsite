@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "idle1",
+	"frame": {"x":35,"y":1,"w":28,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":28,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "idle2",
+	"frame": {"x":65,"y":1,"w":28,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":28,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "idle3",
+	"frame": {"x":95,"y":1,"w":28,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":28,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "in",
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "spirit.png",
+	"format": "RGBA8888",
+	"size": {"w":124,"h":34},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:6c279d608c06f0abfe2a599cd9667c66:3e5ba453e9530d694dfdcd7525b01c0e:01488072bd5a3b4d053b27d9a4f356b9$"
+}
+}

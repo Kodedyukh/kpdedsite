@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "idle1",
+	"frame": {"x":35,"y":1,"w":28,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":28,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "idle2",
+	"frame": {"x":65,"y":1,"w":28,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":28,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "idle3",
+	"frame": {"x":95,"y":1,"w":28,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":28,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "in",
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "phantomSpirit.png",
+	"format": "RGBA8888",
+	"size": {"w":124,"h":34},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:39ae645e1faf9e1664d9cf1700a1854b:bf224675eba729a824455a1228f9fded:6c15c2c81a238ed95ee7dac7ca13cda1$"
+}
+}

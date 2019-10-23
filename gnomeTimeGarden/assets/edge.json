@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "bottom",
+	"frame": {"x":1,"y":10,"w":40,"h":13},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":13},
+	"sourceSize": {"w":40,"h":40}
+},
+{
+	"filename": "left",
+	"frame": {"x":43,"y":1,"w":8,"h":40},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":32,"y":0,"w":8,"h":40},
+	"sourceSize": {"w":40,"h":40}
+},
+{
+	"filename": "top",
+	"frame": {"x":1,"y":1,"w":40,"h":7},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":33,"w":40,"h":7},
+	"sourceSize": {"w":40,"h":40}
+},
+{
+	"filename": "right",
+	"frame": {"x":53,"y":1,"w":8,"h":40},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":8,"h":40},
+	"sourceSize": {"w":40,"h":40}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "edge.png",
+	"format": "RGBA8888",
+	"size": {"w":62,"h":42},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:7bf30ef72546bf9533b4b110ffabb28b:74356d7ddb9d9b7d02b443d7060fd2ac:e2f5330cfd12e85b20c217e8c3e953d8$"
+}
+}

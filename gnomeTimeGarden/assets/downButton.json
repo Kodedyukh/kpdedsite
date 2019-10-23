@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":95,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":95},
+	"sourceSize": {"w":95,"h":95}
+},
+{
+	"filename": "out",
+	"frame": {"x":98,"y":1,"w":95,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":95},
+	"sourceSize": {"w":95,"h":95}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "downButton.png",
+	"format": "RGBA8888",
+	"size": {"w":194,"h":97},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:53e5d733935b57b6d0b822ca785f9e34:e3d3923e06337454c3535622bc98f982:a5d95c90b9e0ec2a8904fe5cb3473fab$"
+}
+}
