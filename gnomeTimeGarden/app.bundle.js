@@ -103,7 +103,7 @@ var Block = exports.Block = function (_Phaser$GameObjects$S) {
         }
     }, {
         key: 'constructBackTween',
-        value: function constructBackTween(inBackTime) {
+        value: function constructBackTween(inBackTime, fast) {
             if (this.scene.turnNum in this.moveStory) {
                 var undoMove = this.moveStory[this.scene.turnNum],
                     backPoint;
@@ -134,7 +134,7 @@ var Block = exports.Block = function (_Phaser$GameObjects$S) {
                         x: { value: this.plannedCoord.x, ease: 'Linear' },
                         y: { value: this.plannedCoord.y, ease: 'Linear' }
                     },
-                    duration: 100
+                    duration: fast ? 10 : 100
                 });
 
                 if (!inBackTime) delete this.moveStory[this.scene.turnNum];
@@ -336,7 +336,8 @@ var PreloaderScene = exports.PreloaderScene = function (_Phaser$Scene) {
         key: 'preload',
         value: function preload() {
             var gameWidth = this.game.scale.width,
-                gameHeight = this.game.scale.height;
+                gameHeight = this.game.scale.height,
+                UIScale = Math.min(this.game.scale.width / 800, this.game.scale.height / 600);
 
             this.preloaderBack = this.add.image(gameWidth / 2 - 150, gameHeight * 0.8, 'preloaderBack').setOrigin(0, 0.5);
 
@@ -346,6 +347,10 @@ var PreloaderScene = exports.PreloaderScene = function (_Phaser$Scene) {
             this.load.on('progress', function (value) {
                 this.preloaderBar.setCrop(0, 0, 300 * value, 40);
             }, this);
+
+            this.cameras.main.setBackgroundColor('#101e28');
+
+            // load assets
 
             this.load.atlas('startButton', 'assets/startButton.png', 'assets/startButton.json');
             this.load.atlas('block', 'assets/block.png', 'assets/block.json');
@@ -382,6 +387,8 @@ var PreloaderScene = exports.PreloaderScene = function (_Phaser$Scene) {
             this.load.atlas('levelUpButton', 'assets/levelUpButton.png', 'assets/levelUpButton.json');
             this.load.atlas('levelDownButton', 'assets/levelDownButton.png', 'assets/levelDownButton.json');
             this.load.atlas('homeButton', 'assets/homeButton.png', 'assets/homeButton.json');
+            this.load.atlas('speedUpButton', 'assets/speedUpButton.png', 'assets/speedUpButton.json');
+            this.load.atlas('skipButton', 'assets/skipButton.png', 'assets/skipButton.json');
 
             this.load.image('rock', 'assets/rock.png');
             this.load.image('background', 'assets/background.png');
@@ -412,7 +419,7 @@ var PreloaderScene = exports.PreloaderScene = function (_Phaser$Scene) {
             this.load.bitmapFont('basicFont', 'assets/fonts/font.png', 'assets/fonts/font.fnt');
             this.load.bitmapFont('insomniaFont', 'assets/fonts/insomniaFont.png', 'assets/fonts/insomniaFont.fnt');
 
-            for (var i = 1; i <= 50; i++) {
+            for (var i = 1; i <= 48; i++) {
                 this.load.json('level' + i, 'assets/levels/stLevel' + i + '.json');
             }
         }
@@ -557,7 +564,7 @@ var MainMenuScene = exports.MainMenuScene = function (_Phaser$Scene) {
             // get player progress
             if (localStorage.getItem('execInsomniaSaveData') === null) {
                 // TODO change back to 1
-                this.game.lastAvailLevel = 50;
+                this.game.lastAvailLevel = 1;
                 this.game.saveData = { lastLevel: this.game.lastAvailLevel };
                 localStorage.setItem('execInsomniaSaveData', JSON.stringify(this.game.saveData));
             } else {
@@ -624,6 +631,7 @@ var MainMenuScene = exports.MainMenuScene = function (_Phaser$Scene) {
     }, {
         key: 'startGame',
         value: function startGame() {
+            if (typeof parent.cmgGameEvent === 'function') parent.cmgGameEvent('start');
             if (this.game.lastAvailLevel > 1) this.scene.start('LevelChoiceScene');else {
                 this.game.currentLevelNum = 1;
                 this.game.totalLevels = 49;
@@ -714,7 +722,7 @@ var LevelChoiceScene = exports.LevelChoiceScene = function (_Phaser$Scene) {
             var gameWidth = this.scale.width,
                 gameHeight = this.scale.height;
 
-            this.game.totalLevels = 49;
+            this.game.totalLevels = 48;
 
             this.buttonsGroup = this.add.group();
             this.buttonsSignesGroup = this.add.group();
@@ -1068,18 +1076,25 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
             }, this);
 
             this.spaceKey.on('down', function () {
-                if (!this.game.spacePushed) this.game.spacePushed = true;
+                if (!this.game.spacePushed && this.currentMode === this.modes.playerTurn) this.game.spacePushed = true;
+                if (this.currentMode === this.modes.movingBack || this.currentMode === this.modes.backTurnTransition || this.currentMode === this.modes.backTilesActions || this.currentMode === this.modes.moveBackTweenConstruction || this.currentMode === this.modes.undoTimedActions) {
+                    // constrol fast rewind
+                    this.fastRewind = true;
+                    this.anims.globalTimeScale = 10;
+                    this.fastRewindText.alpha = 0;
+                    this.fastRewindTextTween.stop();
+                }
                 this.moveExecutioner(this.actions.stay);
             }, this);
 
             this.uKey.on('down', function () {
-                if (!this.game.uPushed) this.game.uPushed = true;
+                if (!this.game.uPushed && this.currentMode === this.modes.playerTurn) this.game.uPushed = true;
                 this.undoLastMove();
             }, this);
 
             this.rKey.on('down', function () {
                 if (!this.game.rPushed) this.game.rPushed = true;
-                this.relaunchState();
+                this.relaunchState(false);
             }, this);
 
             this.mKey.on('down', function () {
@@ -1096,6 +1111,43 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
             }, this);
 
             this.deferredActions = [];
+
+            // rewind speed up
+            this.fastRewind = false;
+            if (this.game.device.os.desktop) {
+                this.fastRewindText = this.add.bitmapText(gameWidth * 0.5 + 10000, gameHeight - 60 + 10000, 'basicFont', 'Press SPACE to speed up rewind', 30);
+                this.fastRewindText.alpha = 0;
+                this.fastRewindText.setOrigin(0.5);
+                this.fastRewindTextTween;
+            } else {
+                this.fastRewindButton = this.makeButton(gameWidth * 0.5 + 10000, gameHeight - 60 + 10000, 'speedUpButton', '', function () {
+                    this.fastRewind = true;
+                    this.anims.globalTimeScale = 10;
+                    this.fastRewindButton.alpha = 0;
+                    this.fastRewindButton.disableInteractive();
+                    this.fastRewindButtonTween.stop();
+                });
+
+                this.fastRewindButton.alpha = 0;
+                this.fastRewindButton.align = 1;
+                this.fastRewindButton.disableInteractive();
+                this.fastRewindButtonTween;
+            }
+
+            // initialize skip starting text button to scale it later
+            if (this.game.device.os.desktop) {
+
+                this.skipStartingTextLabel = this.add.bitmapText(gameWidth * 0.5 + 10000, gameHeight - 60 + 10000, 'basicFont', 'Press SPACE to skip', 30);
+                this.skipStartingTextLabel.alpha = 0;
+                this.skipStartingTextLabel.setOrigin(0.5);
+                this.skipStartingTextLabel.setDepth(11);
+                this.skipStartingTextLabelTween;
+            } else {
+                this.skipStartingTextButton = this.makeButton(gameWidth * 0.5 + 10000, gameHeight - 60 + 10000, 'skipButton', '', undefined);
+                this.skipStartingTextButton.setAlpha(0);
+                this.skipStartingTextButton.disableInteractive();
+                this.skipStartingTextButtonTween;
+            }
 
             // setting turn clock
             this.turnClock = this.add.image(gameWidth * 0.5 - 20 + 10000, 40 + 10000, 'turnClock');
@@ -1131,10 +1183,15 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
             this.stateRelaunched = false;
 
             // staring text
-            this.texts = { 1: "I'm a garden gnome,\nand need to plant flower into that hole", 2: "In this magic Time Garden\nI can use that tile in bottom right corner\nto travel back in time",
-                3: "I can control walls on my way\nwith the buttons of the same color", 4: "Flowers can push buttons too",
-                20: "I need to plant flowers into all holes,\nand can use flowers sent from the future", 22: "When short on boxes I can use box from the future",
-                28: "Wood boxes sink into water,\nand I can step on top of them.\nFlowers float on top of water", 33: "At present time there are ways\nI can take only once", 42: "I need to let me from past\ndo all work" };
+            this.texts = { 1: "I'm a garden gnome.\nI need to plant a flower into that hole",
+                2: "In this magic Time Garden\nI can use that tile in the bottom right\ncorner to travel back in time",
+                3: "I can control walls by standing on the\nbuttons of the same color",
+                4: "Flowers can push buttons too",
+                20: "I need to plant flowers into all holes,\nand can use flowers sent from the future",
+                22: "When short on boxes I can use a box from the future",
+                28: "Wood boxes sink into water,\nand I can step on top of them.\nFlowers float on top of water",
+                33: "At present time there are ways\nI can only walk on once",
+                42: "I must to let my past\nself do all work" };
 
             if (this.game.currentLevelNum in this.texts) {
                 var text = this.texts[this.game.currentLevelNum];
@@ -1143,7 +1200,7 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                 this.startingText.setDepth(11);
 
                 // tween to wanish starting text
-                this.tweens.add({
+                this.startingTextTween = this.tweens.add({
                     targets: this.startingText,
                     props: {
                         alpha: { value: 0, ease: 'Quad.easeIn' }
@@ -1163,12 +1220,12 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                     this.game.rPushed = false;
                     this.game.mPushed = false;
                 }
-                if (this.game.currentLevelNum <= 3 && !this.game.spacePushed) {
-                    var spaceInstructions = this.add.bitmapText(10, gameHeight * 0.95, 'basicFont', 'Skip turn - SPACE', 30);
+                if (this.game.currentLevelNum <= 4) {
+                    var spaceInstructions = this.add.bitmapText(10, gameHeight * 0.95, 'basicFont', 'Wait turn - SPACE', 30);
                     spaceInstructions.setOrigin(0, 0.5);
                 }
 
-                if (this.game.currentLevelNum <= 3) {
+                if (this.game.currentLevelNum <= 4) {
                     if (!this.game.uPushed) {
                         var undoInstructions = this.add.bitmapText(gameWidth - 10, gameHeight * 0.75, 'basicFont', 'Undo last move - U', 30);
                         undoInstructions.setOrigin(1, 0.5);
@@ -1237,7 +1294,7 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                 });
                 this.undoButton.setAlpha(0.5);
                 this.replayButton = this.makeButton(55 + 10000, gameHeight - 155 + 10000, 'replayButton', '', function () {
-                    this.relaunchState();
+                    this.relaunchState(false);
                 });
                 this.replayButton.setAlpha(0.5);
 
@@ -1299,6 +1356,22 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
             if (this.startingText) {
                 this.startingText.setPosition(gameWidth * 0.5 + 10000, gameHeight * 0.5 + 10000);
                 this.startingText.setScale(scale);
+            }
+            if (this.skipStartingTextLabel) {
+                this.skipStartingTextLabel.setPosition(gameWidth * 0.5 + 10000, gameHeight - 60 * scale + 10000);
+                this.skipStartingTextLabel.setScale(scale);
+            }
+            if (this.fastRewindText) {
+                this.fastRewindText.setPosition(gameWidth * 0.5 + 10000, gameHeight - 60 * scale + 10000);
+                this.fastRewindText.setScale(scale);
+            }
+            if (this.fastRewindButton) {
+                this.fastRewindButton.setPosition(gameWidth * 0.5 + 10000, gameHeight - 60 * buttonScale + 10000);
+                this.fastRewindButton.setScale(buttonScale);
+            }
+            if (this.skipStartingTextButton) {
+                this.skipStartingTextButton.setPosition(gameWidth * 0.5 + 10000, gameHeight - 60 * buttonScale + 10000);
+                this.skipStartingTextButton.setScale(buttonScale);
             }
 
             // resize and scale mobile buttons
@@ -1389,7 +1462,7 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                         }, [], this);
                     }
                 } else {
-                    this.deferredActions.push(direction);
+                    if (this.currentMode != this.modes.startingAnimation && this.currentMode != this.modes.movingBack && this.currentMode != this.modes.backTurnTransition && this.currentMode != this.modes.backTilesActions && this.currentMode != this.modes.moveBackTweenConstruction && this.currentMode != this.modes.undoTimedActions) this.deferredActions.push(direction);
                 }
             }
         }
@@ -1655,7 +1728,7 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
         }
     }, {
         key: 'relaunchState',
-        value: function relaunchState() {
+        value: function relaunchState(win) {
             this.leftKey.destroy();
             this.aKey.destroy();
             this.rightKey.destroy();
@@ -1719,7 +1792,50 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                 timeToStartAnimation = 0;
             }
 
-            this.time.delayedCall(timeToStartAnimation, function () {
+            if (timeToStartAnimation > 0) {
+                var spaceEventEmitter;
+            }
+
+            var fadeOutCall, _hideStartTextAndSplash;
+
+            _hideStartTextAndSplash = function hideStartTextAndSplash() {
+                fadeOutCall.destroy();
+
+                // tween to wanish starting text
+                this.startingTextTween.stop();
+                if (this.skipStartingTextLabelTween) this.skipStartingTextLabelTween.stop();
+                this.tweens.add({
+                    targets: [this.startingText, this.skipStartingTextLabel],
+                    props: {
+                        alpha: { value: 0, ease: 'Quad.easeIn' }
+                    },
+                    duration: 700
+                });
+
+                if (!this.game.soundPaused) this.breathInSound.play();
+
+                var alphaTween = this.tweens.add({
+                    targets: this.splashScreen,
+                    props: {
+                        alpha: { value: 0, ease: 'Linear' }
+                    },
+                    duration: 700
+                });
+
+                alphaTween.setCallback('onComplete', function () {
+                    this.currentMode = this.modes.tilesActions;
+                }, [], this);
+
+                if (this.game.device.os.desktop) {
+                    this.spaceKey.removeListener('down', _hideStartTextAndSplash, this, true);
+                } else {
+                    this.skipStartingTextButton.alpha = 0;
+                    this.skipStartingTextButton.disableInteractive();
+                    this.skipStartingTextButtonTween.stop();
+                }
+            };
+
+            fadeOutCall = this.time.delayedCall(timeToStartAnimation, function () {
 
                 if (!this.game.soundPaused) this.breathInSound.play();
 
@@ -1731,10 +1847,60 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                     duration: 1200
                 });
 
+                this.tweens.add({
+                    targets: this.skipStartingTextLabel,
+                    props: {
+                        alpha: { value: 0, ease: 'Linear' }
+                    },
+                    duration: 500
+                });
+
+                if (this.skipStartingTextLabelTween) this.skipStartingTextLabelTween.stop();
+
                 alphaTween.setCallback('onComplete', function () {
                     this.currentMode = this.modes.tilesActions;
                 }, [], this);
+
+                if (timeToStartAnimation > 0) {
+                    if (this.game.device.os.desktop) {
+                        this.spaceKey.removeListener('down', _hideStartTextAndSplash, this, true);
+                    } else {
+                        this.skipStartingTextButton.alpha = 0;
+                        this.skipStartingTextButton.disableInteractive();
+                        this.skipStartingTextButtonTween.stop();
+                    }
+                }
             }, [], this);
+
+            // if player pushes space splash screen and starting text vanishes rapidly
+            if (timeToStartAnimation > 0) {
+                if (this.game.device.os.desktop) {
+                    this.spaceKey.once('down', _hideStartTextAndSplash, this);
+                    this.skipStartingTextLabel.alpha = 0.5;
+                    this.skipStartingTextLabelTween = this.tweens.add({
+                        targets: this.skipStartingTextLabel,
+                        props: {
+                            alpha: { value: 0.1, ease: 'Linear' }
+                        },
+                        duration: 1000,
+                        yoyo: true,
+                        repeat: -1
+                    });
+                } else {
+                    this.skipStartingTextButton.setAlpha(0.5);
+                    this.skipStartingTextButton.setInteractive();
+                    this.skipStartingTextButton.callback = _hideStartTextAndSplash;
+                    this.skipStartingTextButtonTween = this.tweens.add({
+                        targets: this.skipStartingTextButton,
+                        props: {
+                            alpha: { value: 0.1, ease: 'Linear' }
+                        },
+                        duration: 1000,
+                        yoyo: true,
+                        repeat: -1
+                    });
+                }
+            }
         }
     }, {
         key: 'startFinalAnimation',
@@ -1754,7 +1920,7 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
             });
 
             alphaTween.setCallback('onComplete', function () {
-                this.relaunchState();
+                this.relaunchState(true);
             }, [], this);
         }
     }, {
@@ -1846,6 +2012,36 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                     case this.modes.backTilesActions:
                         this.field.undoTilesActions(true);
                         this.currentMode = this.modes.moveBackTweenConstruction;
+
+                        // add rewind spped up label or button
+                        if (this.game.device.os.desktop) {
+                            if (this.fastRewindText.alpha === 0 && !this.fastRewind) {
+                                this.fastRewindText.alpha = 1;
+                                this.fastRewindTextTween = this.tweens.add({
+                                    targets: this.fastRewindText,
+                                    props: {
+                                        alpha: { value: 0.1, ease: 'Linear' }
+                                    },
+                                    duration: 1000,
+                                    yoyo: true,
+                                    repeat: -1
+                                });
+                            }
+                        } else {
+                            if (this.fastRewindButton.alpha === 0 && !this.fastRewind) {
+                                this.fastRewindButton.alpha = 0.5;
+                                this.fastRewindButton.setInteractive();
+                                this.fastRewindButtonTween = this.tweens.add({
+                                    targets: this.fastRewindButton,
+                                    props: {
+                                        alpha: { value: 0.1, ease: 'Linear' }
+                                    },
+                                    duration: 1000,
+                                    yoyo: true,
+                                    repeat: -1
+                                });
+                            }
+                        }
                         break;
 
                     case this.modes.undoTimedActions:
@@ -1854,7 +2050,7 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                         break;
 
                     case this.modes.moveBackTweenConstruction:
-                        this.field.constructBackTweens(true);
+                        this.field.constructBackTweens(true, this.fastRewind);
                         this.field.undoStatusChange(true);
                         this.currentMode = this.modes.movingBack;
                         // rotate the turn clock
@@ -1864,10 +2060,10 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                             props: {
                                 rotation: { value: -Math.PI, ease: 'Linear' }
                             },
-                            duration: 150
+                            duration: this.fastRewind ? 15 : 150
                         });
                         // set a timer to back transition
-                        this.time.delayedCall(150, function () {
+                        this.time.delayedCall(this.fastRewind ? 15 : 150, function () {
                             this.currentMode = this.modes.backTurnTransition;
                         }, [], this);
                         break;
@@ -1886,6 +2082,20 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                             this.turnNum = 1;
                             this.field.clearStory();
                             this.currentMode = this.modes.tilesActions;
+                            this.fastRewind = false;
+                            this.anims.globalTimeScale = 1;
+                            if (this.game.device.os.desktop) {
+                                if (this.fastRewindText.alpha > 0) {
+                                    this.fastRewindText.alpha = 0;
+                                    this.fastRewindTextTween.stop();
+                                }
+                            } else {
+                                if (this.fastRewindButton.alpha > 0) {
+                                    this.fastRewindButton.alpha = 0;
+                                    this.fastRewindButton.disableInteractive();
+                                    this.fastRewindButtonTween.stop();
+                                }
+                            }
                         }
                         this.turnLabel.text = this.turnNum;
                         break;
@@ -1918,6 +2128,10 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
                             this.field.resetDirections();
                             this.currentMode = this.modes.tilesActions;
                             this.turnLabel.text = this.turnNum;
+                            if (this.fastRewind) {
+                                this.fastRewind = false;
+                                this.anims.globalTimeScale = 1;
+                            }
                         }, [], this);
                         break;
 
@@ -1943,17 +2157,20 @@ var PlayScene = exports.PlayScene = function (_Phaser$Scene) {
         value: function makeButton(posX, posY, imageKey, text, callback) {
             var button = this.add.image(posX, posY, imageKey, 'out').setInteractive();
             button.setDepth(101);
+            button.callback = callback;
+
             button.on('pointerdown', function () {
                 if (!this.game.soundPaused) {
                     this.game.buttonSound.play();
                 }
-                callback.call(this);
+                button.callback.call(this);
                 button.setFrame('down');
             }, this);
+
             button.on('pointerup', function () {
                 button.setFrame('out');
             }, this);
-            button.label = this.add.bitmapText(button.x, button.y, 'basicFont', text, 16);
+            button.label = this.add.bitmapText(button.x, button.y, 'basicFont', text, 16, 1);
             button.label.setDepth(102);
             button.label.setOrigin(0.5);
             return button;
@@ -2622,15 +2839,15 @@ var Field = exports.Field = function () {
         }
     }, {
         key: 'constructBackTweens',
-        value: function constructBackTweens(inBackTime) {
+        value: function constructBackTweens(inBackTime, fast) {
             this.movers.forEach(function (mover) {
                 if (!inBackTime || mover.eIType === EITypeDict.phantom) {
-                    mover.constructBackTween(inBackTime);
+                    mover.constructBackTween(inBackTime, fast);
                 }
             }, this);
 
             this.movables.forEach(function (movable) {
-                if (!movable.inPast) movable.constructBackTween(inBackTime);
+                if (!movable.inPast) movable.constructBackTween(inBackTime, fast);
             }, this);
         }
     }, {
@@ -3241,7 +3458,7 @@ var CloseScene = exports.CloseScene = function (_Phaser$Scene) {
             this.background = this.add.sprite(gameWidth * 0.5, gameHeight * 0.5, 'openingBack');
             this.background.setDepth(0);
 
-            this.credText = this.add.bitmapText(this.background.getBottomRight().x - 10, this.background.getTopLeft().y + 10, 'insomniaFont', 'Developed by\nKonstantin Dediukhin\ntwitter: @kpded', 50, 2);
+            this.credText = this.add.bitmapText(this.background.getBottomRight().x - 10, this.background.getTopLeft().y + 10, 'insomniaFont', 'Developed by\nKonstantin Dediukhin', 50, 2);
             this.credText.setOrigin(1, 0);
             this.credText.setAlpha(0);
 
@@ -3674,7 +3891,7 @@ var Executioner = exports.Executioner = function (_Phaser$GameObjects$S) {
         }
     }, {
         key: 'constructBackTween',
-        value: function constructBackTween(inBackTime) {
+        value: function constructBackTween(inBackTime, fast) {
             if (this.scene.turnNum in this.moveStory) {
                 var undoMove = this.moveStory[this.scene.turnNum],
                     backPoint;
@@ -3717,7 +3934,7 @@ var Executioner = exports.Executioner = function (_Phaser$GameObjects$S) {
                         x: { value: this.plannedCoord.x, ease: 'Linear' },
                         y: { value: this.plannedCoord.y, ease: 'Linear' }
                     },
-                    duration: 100
+                    duration: fast ? 10 : 100
                 });
 
                 if (!inBackTime) delete this.moveStory[this.scene.turnNum];
@@ -4982,6 +5199,30 @@ if (isMobile) {
 }
 
 var game = new Phaser.Game(gameConfig);
+
+// workaround for ie not supporting object assign
+if (typeof Object.assign != 'function') {
+    Object.assign = function (target) {
+        'use strict';
+
+        if (target == null) {
+            throw new TypeError('Cannot convert undefined or null to object');
+        }
+
+        target = Object(target);
+        for (var index = 1; index < arguments.length; index++) {
+            var source = arguments[index];
+            if (source != null) {
+                for (var key in source) {
+                    if (Object.prototype.hasOwnProperty.call(source, key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+        }
+        return target;
+    };
+}
 
 document.addEventListener("pause", handlePause, false);
 

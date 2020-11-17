@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "down",
+	"frame": {"x":1,"y":1,"w":185,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":185,"h":95},
+	"sourceSize": {"w":185,"h":95}
+},
+{
+	"filename": "out",
+	"frame": {"x":188,"y":1,"w":185,"h":95},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":185,"h":95},
+	"sourceSize": {"w":185,"h":95}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "speedUpButton.png",
+	"format": "RGBA8888",
+	"size": {"w":374,"h":97},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:225be22ee6e89d915dcf27983ebfee8b:ecdda8794cbd78cbffdad8e3eda02335:9012dd307b6a0f45b2b13c415f5378df$"
+}
+}
